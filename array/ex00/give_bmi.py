@@ -9,6 +9,7 @@ def give_bmi(height: list[int | float],
 
     Returns:
         list[int | float]: List of calculated BMI values.
+                           Returns an empty list if an error occurs.
     """
     try:
         if not isinstance(height, list) or not isinstance(weight, list):
@@ -48,7 +49,8 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
 
     Returns:
         list[bool]: List of boolian values
-            (True when above a limit, False otherwise).
+                    (True when above a limit, False otherwise).
+                    Returns an empty list if an error occurs.
     """
     try:
         if not isinstance(bmi, list):

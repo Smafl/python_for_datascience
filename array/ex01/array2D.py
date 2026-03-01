@@ -13,6 +13,7 @@ def slice_me(family: list, start: int, end: int) -> list:
 
     Returns:
         list: A new truncated array.
+              Returns an empty list if an error occurs.
     """
     try:
         if not isinstance(family, list):
