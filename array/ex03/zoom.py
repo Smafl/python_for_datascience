@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import ft_load
+from load_image import ft_load
 
 
 def main():
