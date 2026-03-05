@@ -5,11 +5,8 @@ import matplotlib.pyplot as plt
 
 def main():
     """
-    Loads the CSV file using load() method,
-    displays the information of life expectancy in given country.
-
-    Args:
-
+    Load the life expectancy dataset and display the life expectancy
+    over time for a given country provided as a command-line argument.
     """
     if (len(sys.argv) != 2):
         sys.exit("Usage: aff_life.py <Country>")
