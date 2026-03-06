@@ -4,6 +4,14 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
 
 
+def convert_to_millions(value):
+    if value.endswith("M"):
+        return float(value[:-1])
+    elif value.endswith("B"):
+        return float(value[:-1]) * 1000
+    return float(value)
+
+
 def format_y_label(x, pos):
     return f"{int(x)}M"
 
@@ -36,8 +44,8 @@ def main():
     mask = (years >= 1800) & (years <= 2050)
     x = years[mask]
 
-    y1 = row_country1.iloc[0, 1:].str.replace("M", "").astype(float)[mask]
-    y2 = row_country2.iloc[0, 1:].str.replace("M", "").astype(float)[mask]
+    y1 = row_country1.iloc[0, 1:].apply(convert_to_millions)[mask]
+    y2 = row_country2.iloc[0, 1:].apply(convert_to_millions)[mask]
 
     fig, ax = plt.subplots()
     ax.plot(x, y1, label=country1)
